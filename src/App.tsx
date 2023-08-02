@@ -1,28 +1,35 @@
-import { Box, Button } from '@mui/material';
-import './App.css';
-import logo from './logo.svg';
+import PriceSortToggleButton from '@/components/PriceSortToggleButton';
+import SizesCheck from '@/components/SizesCheck';
+import { AppBar, Box, Container, Stack, Toolbar, Typography } from '@mui/material';
+import ProductCardList from './components/ProductCardList';
+import useProducts from './hooks';
+
+
+
 
 function App() {
+  const { products, isLoading } = useProducts();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Box>
-          <Button variant="contained">gogogo</Button>
+    <Box pt={{ xs: 7, md: 8, }} bgcolor="#f3f3f3" minHeight="100vh">
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div">
+            Products
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Container>
+        <Box py={4}>
+          <Stack spacing={1}>
+            <SizesCheck />
+            <PriceSortToggleButton />
+            <Box pt={1}>
+              <ProductCardList isLoading={isLoading} products={products} />
+            </Box>
+          </Stack>
         </Box>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </Container>
+    </Box>
   );
 }
 
