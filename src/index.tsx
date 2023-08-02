@@ -1,15 +1,37 @@
+import { ThemeProvider, createTheme } from '@mui/material';
+import { red } from '@mui/material/colors';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { RecoilRoot } from 'recoil';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#556cd6',
+    },
+    secondary: {
+      main: '#19857b',
+    },
+    error: {
+      main: red.A400,
+    },
+  },
+});
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </RecoilRoot>
   </React.StrictMode>
 );
 
