@@ -1,9 +1,9 @@
 import useCart from '@/hooks/useCart';
 import { isOpenCartState } from '@/stores';
-import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import { Box, Button, Typography } from '@mui/material';
 import { useSetRecoilState } from 'recoil';
 import CartDrawer from './CartDrawer';
+import MyIcon from './MyIcon';
 
 interface Props { }
 
@@ -44,7 +44,8 @@ const CartButton: React.FC<Props> = (props: Props) => {
     <>
       <Button onClick={handleClick} color="success" variant="text">
         <Box display="flex" alignItems="center" position="relative">
-          <ShoppingCartRoundedIcon />
+          {/* <ShoppingCartRoundedIcon /> */}
+          <MyIcon name="cart" size={24} />
           <CountTag count={count} />
         </Box>
       </Button>

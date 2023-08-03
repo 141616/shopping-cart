@@ -5,7 +5,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -26,7 +25,8 @@
     "start": "craco start",
     "build": "GENERATE_SOURCEMAP=false craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +48,8 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "@types/big.js": "^6.1.6"
+    "@types/big.js": "^6.1.6",
+    "cross-env": "^7.0.3",
+    "webpack-bundle-analyzer": "^4.9.0"
   }
 }

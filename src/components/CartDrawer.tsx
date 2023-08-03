@@ -1,10 +1,10 @@
 import useCart from '@/hooks/useCart';
 import { isOpenCartState } from '@/stores';
 import { CartItem } from '@/types';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Box, Button, Divider, Drawer, IconButton, Stack, TextField, Typography } from '@mui/material';
 import Big from 'big.js';
 import { useRecoilState } from 'recoil';
+import MyIcon from './MyIcon';
 import PriceLabel from './PriceLabel';
 
 
@@ -121,7 +121,7 @@ const CartDrawer = () => {
         <Stack sx={{ height: 48, px: 2 }} direction="row" alignItems="center" justifyContent="space-between">
           <Typography variant="subtitle1" fontWeight="bold">购物车</Typography>
           <IconButton onClick={() => setIsOpenCart(false)}>
-            <CloseRoundedIcon />
+            <MyIcon name="close" />
           </IconButton>
         </Stack>
         <Divider />
