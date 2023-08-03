@@ -1,4 +1,5 @@
 import CartButton from '@/components/CartButton';
+import LocalStorageContainer from '@/components/LocalStorageContainer';
 import PriceSortToggleButton from '@/components/PriceSortToggleButton';
 import ProductCardList from '@/components/ProductCardList';
 import SizesCheck from '@/components/SizesCheck';
@@ -22,27 +23,29 @@ function App() {
   }, [sort, filterSizeList]);
 
   return (
-    <Box pt={{ xs: 7, md: 8 }} bgcolor="#f3f3f3" minHeight="100vh">
-      <AppBar position="fixed" sx={{ bgcolor: "#000" }}>
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography variant="h6" noWrap component="div">
-            Products
-          </Typography>
-          <CartButton />
-        </Toolbar>
-      </AppBar>
-      <Container>
-        <Box py={4}>
-          <Stack spacing={1}>
-            <SizesCheck filterSizes={filterSizeList} onChangeSizes={(val) => setFilterSizeList(val)} />
-            <PriceSortToggleButton sort={sort} onChangeSort={(v) => setSort(v)} />
-            <Box pt={1}>
-              <ProductCardList isLoading={isLoading} products={products} />
-            </Box>
-          </Stack>
-        </Box>
-      </Container>
-    </Box>
+    <LocalStorageContainer>
+      <Box pt={{ xs: 7, md: 8 }} bgcolor="#f3f3f3" minHeight="100vh">
+        <AppBar position="fixed" sx={{ bgcolor: "#000" }}>
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            <Typography variant="h6" noWrap component="div">
+              Products
+            </Typography>
+            <CartButton />
+          </Toolbar>
+        </AppBar>
+        <Container>
+          <Box py={4}>
+            <Stack spacing={1}>
+              <SizesCheck filterSizes={filterSizeList} onChangeSizes={(val) => setFilterSizeList(val)} />
+              <PriceSortToggleButton sort={sort} onChangeSort={(v) => setSort(v)} />
+              <Box pt={1}>
+                <ProductCardList isLoading={isLoading} products={products} />
+              </Box>
+            </Stack>
+          </Box>
+        </Container>
+      </Box>
+    </LocalStorageContainer>
   );
 }
 

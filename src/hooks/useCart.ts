@@ -19,6 +19,7 @@ const useCart = () => {
   const [cartList, setCartList] = useRecoilState(cartState);
   const maxInstallments = findMaxInstallments(cartList);
 
+  // 添加商品
   const addToCart = (item: CartItem) => {
     // 找到是否已经添加过同种类型的商品
     const currentProduct = cartList.find(findCartItem(item));
@@ -38,12 +39,14 @@ const useCart = () => {
     }
   };
 
+  // 更新商品（用户在输入框直接输入新数量）
   const updateCartItem = (item: CartItem) => {
     setCartList(
       cartList.map((i) => (findCartItem(item)(i) ? { ...i, quantity: item.quantity } : i))
     );
   };
 
+  // 删除整个商品
   const removeItemFromCart = (item: CartItem) => {
     setCartList(cartList.filter((i) => !findCartItem(item)(i)));
   };
