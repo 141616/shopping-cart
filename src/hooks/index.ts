@@ -1,6 +1,6 @@
 import MOCK_PRODUCTS from "@/mocks";
 import { IProduct } from "@/types";
-import { fetchWithTimeout } from "@/utils/Request";
+import { fetchWithTimeout, generateURLWithParams } from "@/utils/Request";
 import { useState } from "react";
 
 const url = "https://www.fastmock.site/mock/bd045a8117f6016c940aa942b9c0641b/api/products";
@@ -16,17 +16,9 @@ const useProducts = () => {
     pageSize?: number;
   }) => {
     try {
-      let _url = url;
-      for (const key in params) {
-        if (Object.prototype.hasOwnProperty.call(params, key)) {
-          const element = (params as any)[key];
-          if (element) {
-            _url += _url.includes("?") ? `&${key}=${element}` : `?${key}=${element}`;
-          }
-        }
-      }
+      setIsLoading(true);
+      let _url = generateURLWithParams(url, params);
       const res = await fetchWithTimeout(_url, 3 * 1000);
-      console.log(res);
       if (res?.data && Array.isArray(res.data)) {
         setProducts(res.data);
       }

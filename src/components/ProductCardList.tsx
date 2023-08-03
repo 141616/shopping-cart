@@ -9,7 +9,6 @@ interface Props {
 }
 
 const ProductCardList: React.FC<Props> = (props: Props) => {
-
   if (props.isLoading) {
     return (
       <Stack alignItems="center" py={10}>

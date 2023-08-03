@@ -1,3 +1,16 @@
+export const generateURLWithParams = (url: string, params: any) => {
+  let _url = url;
+  for (const key in params) {
+    if (Object.prototype.hasOwnProperty.call(params, key)) {
+      const element = (params as any)[key];
+      if (element) {
+        _url += _url.includes("?") ? `&${key}=${element}` : `?${key}=${element}`;
+      }
+    }
+  }
+  return _url;
+};
+
 export async function fetchWithTimeout(url: string, timeout = 10 * 1000): Promise<any> {
   return new Promise((resolve, reject) => {
     const controller = new AbortController();
