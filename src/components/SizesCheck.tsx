@@ -1,17 +1,8 @@
+import { SizeType } from '@/types';
 import { Box, Checkbox, FormControlLabel, FormGroup, FormLabel, Stack } from '@mui/material';
 import { useState } from 'react';
 
 interface Props { }
-
-enum SizeType {
-  XS = "XS",
-  S = "S",
-  M = "M",
-  ML = "ML",
-  L = "L",
-  XL = "XL",
-  XXL = "XXL"
-}
 
 const ALLSizeList = [
   SizeType.XS,
