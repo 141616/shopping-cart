@@ -21,6 +21,11 @@ export enum SizeType {
   XXL = "XXL",
 }
 
+export enum SortType {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
 export interface CartItem {
   product: IProduct;
   quantity: number;

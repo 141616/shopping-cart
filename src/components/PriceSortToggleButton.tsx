@@ -1,29 +1,32 @@
+import { SortType } from '@/types';
 import { Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
-import { useState } from 'react';
 
-interface Props { }
+interface Props {
+  sort: SortType;
+  onChangeSort: (sort: SortType) => void;
+}
 
 const PriceSortToggleButton: React.FC<Props> = (props: Props) => {
-  const [sort, setSort] = useState<"asc" | "desc">('desc');
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
-    newValue: "asc" | "desc",
+    newValue: SortType,
   ) => {
-    setSort(newValue);
+    props.onChangeSort(newValue);
   }
+
   return (
     <Stack direction="row" spacing={1} alignItems="center">
       <Typography>价格：</Typography>
       <ToggleButtonGroup
-        value={sort}
+        value={props.sort}
         exclusive
         onChange={handleChange}
         size="small"
       >
-        <ToggleButton value="asc" aria-label="Asc">
+        <ToggleButton value={SortType.ASC} aria-label="Asc">
           按价格升序
         </ToggleButton>
-        <ToggleButton value="desc" aria-label="desc">
+        <ToggleButton value={SortType.DESC} aria-label="Desc">
           按价格降序
         </ToggleButton>
       </ToggleButtonGroup>
