@@ -26,7 +26,8 @@
     "build": "GENERATE_SOURCEMAP=false craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 npm run build"
+    "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 npm run build",
+    "cypress": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -48,8 +49,10 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
+    "@cypress/webpack-preprocessor": "^5.17.1",
     "@types/big.js": "^6.1.6",
     "cross-env": "^7.0.3",
+    "cypress": "^12.17.3",
     "webpack-bundle-analyzer": "^4.9.0"
   }
 }
