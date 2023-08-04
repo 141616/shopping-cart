@@ -12,7 +12,7 @@ const PriceLabel: React.FC<Props> = (props: Props) => {
   return (
     <Typography role="price" variant="body2" textAlign={props.center ? "center" : 'start'}>
       <span style={{ marginRight: 4 }}>$</span>
-      <span style={{ fontSize: 24, fontWeight: 700 }}>{intStr}</span>
+      <span className='price-main' style={{ fontSize: 24, fontWeight: 700 }}>{intStr}</span>
       .{dotStr}
     </Typography>
   );

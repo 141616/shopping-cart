@@ -23,7 +23,7 @@ const PriceSortToggleButton: React.FC<Props> = (props: Props) => {
         onChange={handleChange}
         size="small"
       >
-        <ToggleButton value={SortType.ASC} aria-label="Asc">
+        <ToggleButton id="asc-button" value={SortType.ASC} aria-label="Asc">
           按价格升序
         </ToggleButton>
         <ToggleButton value={SortType.DESC} aria-label="Desc">

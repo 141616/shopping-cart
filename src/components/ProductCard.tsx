@@ -106,6 +106,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
           fullWidth
           size="small"
           variant="outlined"
+          className="add-button"
           onClick={() => handleClick(product)}
         >
           添加到购物车

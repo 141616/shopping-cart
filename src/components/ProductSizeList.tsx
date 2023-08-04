@@ -11,7 +11,7 @@ const ProductSizeList = ({ sizes }: { sizes: string[] }) => {
         p: 1.5,
       }}
     >
-      <Stack direction="row" spacing={1}>
+      <Stack direction="row" spacing={1} className='sizes-container'>
         {
           sizes.map((size, index) => {
             return (
