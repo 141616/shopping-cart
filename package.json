@@ -27,7 +27,13 @@
     "test": "craco test",
     "eject": "craco eject",
     "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 npm run build",
+    "precommit": "npm test",
     "cypress": "cypress open"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +59,7 @@
     "@types/big.js": "^6.1.6",
     "cross-env": "^7.0.3",
     "cypress": "^12.17.3",
+    "husky": "^8.0.3",
     "webpack-bundle-analyzer": "^4.9.0"
   }
 }
