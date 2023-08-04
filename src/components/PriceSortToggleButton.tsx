@@ -1,4 +1,4 @@
-import { SortType } from '@/types';
+import { SortType } from '../types';
 import { Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 
 interface Props {

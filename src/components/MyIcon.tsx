@@ -5,7 +5,7 @@ interface MyIconProps {
 
 const MyIcon = (props: MyIconProps) => {
   return (
-    <svg style={{ width: props.size || 16, height: props.size || 16 }} className="icon" aria-hidden="true">
+    <svg data-testid="icon" style={{ width: props.size || 16, height: props.size || 16 }} className="icon" aria-hidden="true">
       <use xlinkHref={`#icon-${props.name}`}></use>
     </svg>
   );

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import CartButton from '@/components/CartButton';
 import LocalStorageContainer from '@/components/LocalStorageContainer';
 import PriceSortToggleButton from '@/components/PriceSortToggleButton';
@@ -6,7 +7,6 @@ import SizesCheck from '@/components/SizesCheck';
 import useProducts from '@/hooks';
 import { SizeType, SortType } from '@/types';
 import { AppBar, Box, Container, Stack, Toolbar, Typography } from '@mui/material';
-import { useEffect, useState } from 'react';
 
 function App() {
   const { products, isLoading, fetchProducts } = useProducts();

@@ -1,4 +1,4 @@
-import { SizeType } from '@/types';
+import { SizeType } from '../types';
 import { Box, Checkbox, FormControlLabel, FormGroup, Stack, Typography } from '@mui/material';
 
 const ALLSizeList = [
