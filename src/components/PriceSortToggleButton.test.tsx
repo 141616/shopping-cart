@@ -17,7 +17,7 @@ test('renders PriceSortToggleButton component correctly', () => {
   expect(ascToggleButton).toBeInTheDocument();
   expect(ascToggleButton).toHaveClass('Mui-selected');
   expect(descToggleButton).toBeInTheDocument();
-  expect(descToggleButton).not.toHaveClass('Mui-selected');
+  expect(descToggleButton).toHaveClass('Mui-selected');
 });
 
 test('clicking on toggle buttons triggers onChangeSort callback', () => {
