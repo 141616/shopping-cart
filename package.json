@@ -27,7 +27,7 @@
     "test": "craco test",
     "eject": "craco eject",
     "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 npm run build",
-    "precommit": "npm test",
+    "precommit": "npm run test",
     "cypress": "cypress open"
   },
   "husky": {
